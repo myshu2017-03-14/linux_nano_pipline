@@ -23,6 +23,7 @@ myshu's program of nanopore data analysis
 basecalling命令如下：
 
 > nohup ./0-basecalling/Albacore/albacore_myshu_for_skip.sh data/ albacore_out/ &
+
 最后，basecalling好的数据会在`albacore_out/workspace/pass/`文件夹，这个文件夹的数据可以直接用于提交epi2me，进行数据分析
 
 
