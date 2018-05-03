@@ -68,4 +68,5 @@ porechop拆分命令如下：
 最后`final_out/`文件夹会包含如下文件：
 
 > —— BC*_blastn_16S_anno_cov.out   # blastn结果（包含注释信息）
+>
 > —— cat_taxa_abundance.ITS.level*.out  # 物种丰度表
