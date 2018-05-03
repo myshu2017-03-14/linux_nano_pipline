@@ -1,5 +1,5 @@
 
-# nanopore 16S和ITS分析流程代码教程
+# nanopore dataanalysis
 myshu
 2018-05-03
 
