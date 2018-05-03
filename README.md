@@ -1,5 +1,5 @@
 
-# nanopore dataanalysis
+# nanopore data analysis
 myshu
 2018-05-03
 
