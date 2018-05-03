@@ -57,7 +57,7 @@ porechop拆分命令如下：
  
 > ./count_taxa_abundance_blastn.sh blastn_out/
 >
-> ./cat_taxa_abundance.sh blastn_out/
+> ./cat_taxa_abundance_blastn.sh blastn_out/
  
 
 最后，将结果导出到结果文件夹：
