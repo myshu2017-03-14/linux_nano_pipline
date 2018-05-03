@@ -28,7 +28,7 @@ for i in $in/*16S_anno_cov_uniq.out
 do
 	name=$(basename $i .out)
 	cut -f 2 $i|grep -v 'Subject'|grep -v 'No hits found'|sort|uniq > $name.taxa.ref.ids
-	perl $pro/get_taxa_abundance_program/get_subset_matrix.pl -list $name.taxa.ref.ids -i /database/16S_db/NCBI-16S/NCBI-16S-18998.taxa.tab -n 1 -o $name.taxa.ref.txt
+	perl $pro/get_taxa_abundance_program/get_subset_matrix.pl -list $name.taxa.ref.ids -i $pro/database/16S_db/NCBI-16S-19088.taxa.tab -n 1 -o $name.taxa.ref.txt
 	perl $pro/get_taxa_abundance_program/get_taxa_for_blastTab.pl -i $i -id $name.taxa.ref.txt -o $name.taxa.out
 	for n in 1 2 3 4 5 6 7
 	do
@@ -40,7 +40,7 @@ for i in $in/*ITS_anno_cov_uniq.out
 do
 	name=$(basename $i .out)
 	cut -f 2 $i|grep -v 'Subject'|grep -v 'No hits found'|sort|uniq > $name.taxa.ref.ids
-	perl $pro/get_taxa_abundance_program/get_subset_matrix.pl -list $name.taxa.ref.ids -i /database/ITS_db/NCBI-refseq-targetedloci/fungi.ITS.taxa.tab -n 1 -o $name.taxa.ref.txt
+	perl $pro/get_taxa_abundance_program/get_subset_matrix.pl -list $name.taxa.ref.ids -i $pro/database/ITS_db/fungi.ITS.taxa.tab -n 1 -o $name.taxa.ref.txt
 	perl $pro/get_taxa_abundance_program/get_taxa_for_blastTab.pl -i $i -id $name.taxa.ref.txt -o $name.taxa.out
 	for n in 1 2 3 4 5 6 7
 	do
