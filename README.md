@@ -12,7 +12,7 @@ myshu's program of nanopore data analysis
 
 拷贝数据到新文件夹(可以拷贝fast5文件夹中的多个文件夹！)：
  
-> cp fast5/0/ 20180428-FAH08967-12-samples/data
+> cp -r fast5/0/ 20180428-FAH08967-12-samples/data
 
 2. 接下来进行数据分析：
 首先 ，进入分析目录：
