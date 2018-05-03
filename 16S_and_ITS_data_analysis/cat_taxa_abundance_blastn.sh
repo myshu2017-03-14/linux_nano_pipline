@@ -67,3 +67,4 @@ do
 	rm tmp.out
 done
 rm tmp.txt
+perl -i -p -e 's/(\S+)_blastn_\S+_anno_cov_uniq.abundance.level\d.out/$1/g' $in/cat_taxa_abundance.*
