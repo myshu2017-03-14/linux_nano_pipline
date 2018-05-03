@@ -1,7 +1,8 @@
 # nanopore_data_analysis
 myshu's program of nanopore data analysis
  
-1. 首先，需要将测序的结果的fast5/文件夹中的部分数据拷贝出来，具体方法如下：
+1. 数据拷贝：
+首先，需要将测序的结果的fast5/文件夹中的部分数据拷贝出来，具体方法如下：
 新建一个文件夹,并建立data文件夹：
 （建议以`日期+flowcellID+样本数目`命名）
  
@@ -14,7 +15,7 @@ myshu's program of nanopore data analysis
  
 > cp -r fast5/0/ 20180428-FAH08967-12-samples/data
 
-2. 接下来进行数据分析：
+2. 数据准备：
 首先 ，进入分析目录：
 
 > cd 20180428-FAH08967-12-samples
@@ -38,7 +39,13 @@ porechop拆分命令如下：
  
 最后会生成porechop_output_85/这个文件夹，文件夹下会有以barcode命名的的fasta数据文件。
  
+3. 数据分析
 ## 16S+ITS analysis
+ 
+# 在做blast之前，需要将数据转换下格式以及计算reads长度，命令如下：
+
+> ./2-reads_length_plots/get_fa_and_len.sh porechop_output_85/
+
 
 
 
