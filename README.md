@@ -48,7 +48,7 @@ porechop拆分命令如下：
 接着，运行blast，命令如下：
  
 > blastn.sh porechop_output_85/ porechop_output_85/
- 
+
 前后两个文件夹分别表示fasta格式的数据文件夹，以及包含有reads长度信息的len格式文件。
  
 运行完成之后会生成一个`blastn_out/`文件夹。
@@ -56,7 +56,7 @@ porechop拆分命令如下：
 最后，需要对blast的结果进行处理：
  
 > ./count_taxa_abundance_blastn.sh blastn_out/
-
+>
 > ./cat_taxa_abundance.sh blastn_out/
  
 最后，将结果导出到结果文件夹：
@@ -64,5 +64,6 @@ porechop拆分命令如下：
 > ./get_final_results.sh final_out/
  
 最后`final_out/`文件夹会包含如下文件：
+
 > —— BC*_blastn_16S_anno_cov.out   # blastn结果（包含注释信息）
 > —— cat_taxa_abundance.ITS.level*.out  # 物种丰度表
