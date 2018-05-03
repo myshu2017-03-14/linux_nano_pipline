@@ -1,7 +1,7 @@
 #!/bin/bash   
 #---------------------------------------------------------------+
 #     author: Myshu                                             |
-#			mail:1291016966@qq.com                                    |
+#	  mail:1291016966@qq.com                                    |
 #     version:1.0                                               |
 #     date :2018-5-3                                            |
 #     description: Bascalling for nanopore data using albacore  |
