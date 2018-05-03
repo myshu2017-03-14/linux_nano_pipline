@@ -44,7 +44,7 @@ porechop拆分命令如下：
 在做blast之前，需要将数据转换下格式以及计算reads长度，命令如下：
 
 > ./2-reads_length_plots/get_fa_and_len.sh porechop_output_85/
- 
+
 接着，运行blast，命令如下：
  
 > blastn.sh porechop_output_85/ porechop_output_85/
