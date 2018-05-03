@@ -7,7 +7,7 @@ myshu's program of nanopore data analysis
 （建议以`日期+flowcellID+样本数目`命名）
  
 > mkdir 20180428-FAH08967-12-samples
-
+>
 > mkdir 20180428-FAH08967-12-samples/data
 
 
@@ -35,7 +35,7 @@ basecalling命令如下：
 
 porechop拆分命令如下：
 
-> ./1-split_barcode/porechop_test.sh 20180428-FAH08967-12-samples.fastq
+> nohup ./1-split_barcode/porechop_test.sh 20180428-FAH08967-12-samples.fastq > porechop.nohup.out &
  
 最后会生成porechop_output_85/这个文件夹，文件夹下会有以barcode命名的的fasta数据文件。
  
@@ -47,7 +47,7 @@ porechop拆分命令如下：
 
 接着，运行blast，命令如下：
  
-> blastn.sh porechop_output_85/ porechop_output_85/
+> nohup blastn.sh porechop_output_85/ porechop_output_85/ &
 
 前后两个文件夹分别表示fasta格式的数据文件夹，以及包含有reads长度信息的len格式文件。
  
