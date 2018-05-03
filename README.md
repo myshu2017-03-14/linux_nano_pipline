@@ -36,4 +36,9 @@ porechop拆分命令如下：
 
 > ./1-split_barcode/porechop_test.sh 20180428-FAH08967-12-samples.fastq
  
- 
+最后会生成porechop_output_85/这个文件夹，文件夹下会有以barcode命名的的fasta数据文件。
+ 
+## 16S+ITS analysis
+
+
+
