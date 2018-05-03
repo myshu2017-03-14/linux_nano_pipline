@@ -59,10 +59,12 @@ porechop拆分命令如下：
 >
 > ./cat_taxa_abundance.sh blastn_out/
  
+
 最后，将结果导出到结果文件夹：
  
 > ./get_final_results.sh final_out/
- 
+
+
 最后`final_out/`文件夹会包含如下文件：
 
 > —— BC*_blastn_16S_anno_cov.out   # blastn结果（包含注释信息）
