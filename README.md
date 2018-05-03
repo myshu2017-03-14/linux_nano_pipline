@@ -4,7 +4,7 @@ myshu
 2018-05-03
 
 可以直接在github 上下载访问：https://github.com/myshu2017-03-14/linux_nano_pipline
-> git clone https://github.com/myshu2017-03-14/linux_nano_pipline
+> git clone https://github.com/myshu2017-03-14/linux_nano_pipline.git
 
 # 1 数据拷贝：
 首先，需要将测序的结果的fast5/文件夹中的部分数据拷贝出来，具体方法如下：
