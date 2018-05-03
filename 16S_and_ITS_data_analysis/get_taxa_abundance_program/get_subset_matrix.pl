@@ -18,6 +18,8 @@ GetOptions (
 if (!$in ||!$out || !$list ||!$n) {
 	print STDERR <<USAGE;
 =============================================================================
+ Contact:1291016966\@qq.com
+    Data:2018-05-03
 Descriptions: Get the sub matrix
 Usage:
 	perl $0 [options]

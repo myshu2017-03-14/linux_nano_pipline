@@ -1,5 +1,13 @@
 #!/bin/bash
-#!/usr/bin/env bash 
+#!/usr/bin/env bash  
+#------------------------------------------------------------------+
+#     author: Myshu                                                |
+#			mail:1291016966@qq.com                                       |
+#     version:1.0                                                  |
+#     date :2018-5-3                                               |
+#     description: Get all fastq file length and convert to fasta  |
+#------------------------------------------------------------------+
+
 # echo the help if not input all the options
 help()
 {

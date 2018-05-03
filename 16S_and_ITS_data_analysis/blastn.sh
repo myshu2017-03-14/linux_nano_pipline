@@ -1,5 +1,12 @@
 #!/usr/bin/env bash 
 #!/bin/bash
+#---------------------------------------------------------------+
+#     author: Myshu                                             |
+#			mail:1291016966@qq.com                                    |
+#     version:1.0                                               |
+#     date :2018-5-3                                            |
+#     description: run blast for 16S and ITS                    |
+#---------------------------------------------------------------+
 # echo the help if not input all the options
 help()
 {
