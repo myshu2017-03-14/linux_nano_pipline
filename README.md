@@ -50,9 +50,9 @@ porechop拆分命令如下：
 
 > ./2-reads_length_plots/get_fa_and_len.sh porechop_output_85/
 
-接着，运行blast，命令如下：
+接着，运行blast，命令如下：(`路径必须全为绝对路径！！！`)
 
-> nohup blastn.sh porechop_output_85/ porechop_output_85/ &
+> nohup /linux_nano_pipline/16S_and_ITS_data_analysis/blastn.sh /analysis/20180428-FAH08967-12-samples/porechop_output_85/ /analysis/20180428-FAH08967-12-samples/porechop_output_85/ &
 
 前后两个文件夹分别表示fasta格式的数据文件夹，以及包含有reads长度信息的len格式文件，通常为同一个文件夹。
 
