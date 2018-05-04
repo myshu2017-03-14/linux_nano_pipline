@@ -7,14 +7,12 @@ myshu
 > git clone https://github.com/myshu2017-03-14/linux_nano_pipline.git
 
 # 1 数据拷贝：
-首先，需要将测序的结果的fast5/文件夹中的部分数据拷贝出来，具体方法如下：
 新建一个文件夹,并建立data文件夹：
 （建议以`日期+flowcellID+样本数目`命名）
 
 > mkdir 20180428-FAH08967-12-samples
 >
 > mkdir 20180428-FAH08967-12-samples/data
-
 
 拷贝数据到新文件夹(可以拷贝fast5文件夹中的多个文件夹！`如果已测序完成可以忽略这一步，并且之后代码的data文件夹全部为fast5文件夹`)：
 
