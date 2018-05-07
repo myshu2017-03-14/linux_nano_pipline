@@ -44,7 +44,7 @@ porechop拆分命令如下：
 
 # 3 数据分析
 ### 16S+ITS analysis
-在做blast之前，需要将数据转换格式(fasta -> fastq)以及计算reads长度，命令如下：
+在做blast之前，需要将数据转换格式(fastq -> fasta)以及计算reads长度，命令如下：
 
 > ./2-reads_length_plots/get_fa_and_len.sh porechop_output_85/
 
