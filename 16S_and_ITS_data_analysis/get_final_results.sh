@@ -6,10 +6,10 @@
 #     date :2018-5-3                                            |
 #     description: Bascalling for nanopore data using albacore  |
 #---------------------------------------------------------------+
-out=$1
-dir=$(dirname $out)
+in=$1
+out=$2
 if [ ! -d "$out" ]; then
   mkdir $out
 fi
 #echo $dir
-cp $dir/blastn_out/BC*_blastn_*_anno_cov.out $dir/blastn_out/cat_taxa_abundance.*.level*.out $out
+cp $in/BC*_blastn_*_anno_cov.out $in/cat_taxa_abundance.*.level*.out $out
