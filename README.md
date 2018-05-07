@@ -65,7 +65,7 @@ porechop拆分命令如下：
 
 最后，将结果导出到结果文件夹：
 
-> ./get_final_results.sh final_out/
+> ./get_final_results.sh blastn_out/ final_out/
 
 
 最后`final_out/`文件夹会包含如下文件：
