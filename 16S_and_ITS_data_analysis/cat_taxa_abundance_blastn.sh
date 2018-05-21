@@ -2,7 +2,7 @@
 #!/usr/bin/env bash 
 #---------------------------------------------------------------+
 #     author: Myshu                                             |
-#			mail:1291016966@qq.com                                    |
+#     mail:1291016966@qq.com                                    |
 #     version:1.0                                               |
 #     date :2018-5-3                                            |
 #     description: cat abundance for all samples                |
@@ -29,6 +29,12 @@ do
 	# ITS
 	for i in $in/*_blastn_ITS_anno_cov_uniq.abundance.level$n.out
 	do
+		# rm empty results
+		if [ ! -s $i ]
+		then
+			echo $i
+			continue
+		fi
 		if [ $j == 1 ]
 		then
 			t=$i
@@ -49,6 +55,13 @@ do
 	j=1
 	for i in $in/*_blastn_16S_anno_cov_uniq.abundance.level$n.out
 	do
+		# rm empty results
+		if [ ! -s $i ]
+		then
+			echo $i
+			continue
+		fi
+
 		if [ $j == 1 ]
 		then
 			t=$i
