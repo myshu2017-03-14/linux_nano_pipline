@@ -1,7 +1,7 @@
 
 # nanopore data analysis
 myshu
-2018-05-03
+2018-05-23
 
 可以直接在github 上下载访问：https://github.com/myshu2017-03-14/linux_nano_pipline
 > git clone https://github.com/myshu2017-03-14/linux_nano_pipline.git
@@ -44,31 +44,37 @@ porechop拆分命令如下：
 
 # 3 数据分析
 ### 16S+ITS analysis
-在做blast之前，需要将数据转换格式(fastq -> fasta)以及计算reads长度，命令如下：
+- 在做blast之前，需要将数据转换格式(fastq -> fasta)以及计算reads长度，命令如下：
 
 > ./2-reads_length_plots/get_fa_and_len.sh porechop_output_85/
 
-接着，运行blast，命令如下：(`路径必须全为绝对路径！！！`)
+- 注：可以根据生成的.len文件绘制reads长度分布bar图，代码如下
+
+> ./2-reads_length_plots/plot_bar_of_reads_length.sh porechop_output_85/ raw_reads_length_barplots/
+ 
+在 raw_reads_length_barplots/目录下会生成拆分后每个样本的reads分布柱状图，相关的bar图间隔参数设置，详见./2-reads_length_plots/plot_bar_of_reads_length.sh脚本
+
+- 接着，运行blast，命令如下：
 
 > nohup /linux_nano_pipline/16S_and_ITS_data_analysis/blastn.sh /analysis/20180428-FAH08967-12-samples/porechop_output_85/ /analysis/20180428-FAH08967-12-samples/porechop_output_85/ &
 
 前后两个文件夹分别表示fasta格式的数据文件夹，以及包含有reads长度信息的len格式文件，通常为同一个文件夹。
 
 运行完成之后会生成一个`blastn_out/`文件夹。
-
-最后，需要对blast的结果进行处理：
+ 
+- 最后，需要对blast的结果进行处理：
 
 > ./count_taxa_abundance_blastn.sh blastn_out/
 >
 > ./cat_taxa_abundance_blastn.sh blastn_out/
 
-
-最后，将结果导出到结果文件夹：
+ 
+- 最后，将结果导出到结果文件夹：
 
 > ./get_final_results.sh blastn_out/ final_out/
 
-
-最后`final_out/`文件夹会包含如下文件：
+ 
+- 最后`final_out/`文件夹会包含如下文件：
 
 > —— BC*_blastn_16S_anno_cov.out  # blastn结果（包含注释信息）
 >
