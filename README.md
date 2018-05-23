@@ -64,7 +64,7 @@ porechop拆分命令如下：
  
 - 接着，需要对blast的结果进行过滤处理：（分别采用identity和coverage 进行过滤，并使用megan软件的相关命令进行处理，最终得到每条reads的准确分类信息以及丰度信息
 
-  1. blastn 结果过滤：(如下过滤标准identity≥70，coverage≥30)
+  1. blastn 结果过滤：(如下过滤标准identity≥70，coverage≥30)
 
 > ./16S_and_ITS_data_analysis/filter_program/filter_blastn_myshu.sh blastn_out/ 70 30 blastn_out_filter_i70_c30
 
