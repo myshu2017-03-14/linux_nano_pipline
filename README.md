@@ -64,18 +64,28 @@ porechop拆分命令如下：
  
 - 接着，需要对blast的结果进行过滤处理：（分别采用identity和coverage 进行过滤，并使用megan软件的相关命令进行处理，最终得到每条reads的准确分类信息以及丰度信息
 
-  + blastn 结果过滤：(如下过滤标准identity≥70，coverage≥30)
+  1. blastn 结果过滤：(如下过滤标准identity≥70，coverage≥30)
 
 > ./16S_and_ITS_data_analysis/filter_program/filter_blastn_myshu.sh blastn_out/ 70 30 blastn_out_filter_i70_c30
 
-  + megan软件处理
+  2. megan软件处理:(输入参数分别为blastn过滤结果；原始数据文件夹；结果文件夹；及Tag：-a for 16S,-b for ITS,-c for 16S+ITS；表示输入数据类型)
 
-
-> ./count_taxa_abundance_blastn.sh blastn_out/
->
-> ./cat_taxa_abundance_blastn.sh blastn_out/
-
+>./16S_and_ITS_data_analysis/filter_program/lca_test.sh blastn_out_filter_i70_c30/ /analysis/20180428-FAH08967-12-samples/porechop_output_85/ blastn_out_lca/ -a
  
+- 对每个样本的每个分类层级数据进行统计，并合并多个样本
+
+> ./16S_and_ITS_data_analysis/count_taxa_abundance_blastn_lca.sh blastn_out_lca/
+> ./16S_and_ITS_data_analysis/cat_taxa_abundance_blastn_lca.sh blastn_lca_out -c
+> 注，最后一位参数为tag，同上megan软件处理参数
+
+- 对blastn比对结果中的reads绘制reads长度分布图
+
+> ./2-reads_length_plots/plot_bar_of_reads_length_ITS_or_16S_for_lca.sh blastn_out/ data/ read_len_bar_of_16S_and_ITS/ -c
+> 注，最后一位参数为tag，同上megan软件处理参数
+
+- 绘制sankey plots
+
+
 - 最后，将结果导出到结果文件夹：
 
 > ./get_final_results.sh blastn_out/ final_out/
