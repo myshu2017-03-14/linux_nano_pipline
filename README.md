@@ -68,7 +68,7 @@ porechop拆分命令如下：
 
 > ./16S_and_ITS_data_analysis/filter_program/filter_blastn_myshu.sh blastn_out/ 70 30 blastn_out_filter_i70_c30
 
-  2. megan软件处理:(输入参数分别为blastn过滤结果；原始数据文件夹；结果文件夹；及Tag：-a for 16S,-b for ITS,-c for 16S+ITS；表示输入数据类型)
+  2. megan软件处理:（输入参数分别为blastn过滤结果；原始数据文件夹；结果文件夹；及Tag：-a for 16S,-b for ITS,-c for 16S+ITS；表示输入数据类型）
 
 >./16S_and_ITS_data_analysis/filter_program/lca_test.sh blastn_out_filter_i70_c30/ /analysis/20180428-FAH08967-12-samples/porechop_output_85/ blastn_out_lca/ -a
  
