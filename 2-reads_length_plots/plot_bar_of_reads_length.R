@@ -1,13 +1,7 @@
 #!/usr/bin/Rscript
-#-----------------------------------------------------------------+
-#     author: Myshu                                               |
-#			mail:1291016966@qq.com                                      |
-#     version:1.0                                                 |
-#     date :2018-5-3                                              |
-#     description: make bar plots for reads length of each sample |
-#-----------------------------------------------------------------+
-
 library(getopt)
+# get options, using the spec as defined by the enclosed list.
+# we read the options from the default: commandArgs(TRUE).
 # character logical integer double
 spec = matrix(c(
   'input_file', 'i', 1, "character",
