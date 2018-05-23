@@ -47,7 +47,7 @@ porechop拆分命令如下：
 - 在做blast之前，需要将数据转换格式(fastq -> fasta)以及计算reads长度，命令如下：
 
 > ./2-reads_length_plots/get_fa_and_len.sh porechop_output_85/
-
+ 
 - 注：可以根据生成的.len文件绘制reads长度分布bar图，代码如下
 
 > ./2-reads_length_plots/plot_bar_of_reads_length.sh porechop_output_85/ raw_reads_length_barplots/
@@ -64,7 +64,12 @@ porechop拆分命令如下：
  
 - 接着，需要对blast的结果进行过滤处理：（分别采用identity和coverage 进行过滤，并使用megan软件的相关命令进行处理，最终得到每条reads的准确分类信息以及丰度信息
 
-  + blastn 结果过滤
+  + blastn 结果过滤：(如下过滤标准identity≥70，coverage≥30)
+
+> ./16S_and_ITS_data_analysis/filter_program/filter_blastn_myshu.sh blastn_out/ 70 30 blastn_out_filter_i70_c30
+
+  + megan软件处理
+
 
 > ./count_taxa_abundance_blastn.sh blastn_out/
 >
