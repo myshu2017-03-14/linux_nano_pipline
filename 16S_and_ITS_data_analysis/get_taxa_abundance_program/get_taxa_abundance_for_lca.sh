@@ -2,7 +2,7 @@
 #!/usr/bin/env bash 
 #---------------------------------------------------------------+
 #     author: Myshu                                             |
-#			mail:1291016966@qq.com                                    |
+#     mail:1291016966@qq.com                                    |
 #     version:1.0                                               |
 #     date :2018-5-3                                            |
 #     description: get taxa abundance                           |
@@ -28,17 +28,24 @@ o=$3
 col=$4
 flag=$5
 
-name="test"
-#for i in blast_out/*_anno_cov_uniq.out last_out/*_anno_cov_uniq.out 
-#do
-#	name=$(basename $i .out)
-	# calculate every taxa abundace
-	cut -f $col $i | cut -f $level -d ","|sort | uniq -c | sort -rn > $o #$name.taxa.count.txt
-	# change the format
-	perl -p -i -e 's/^\s+(\d{1,}) /$1\t/g' $o #$name.taxa.count.txt
-	perl -p -i -e 's/^(\d{1,})\t(.*)$/$2\t$1/g' $o
-	perl -p -i -e 's/^\t(\d{1,})$/NO_rank\t$1/g' $o
-#done
+# deal with the raw blastn lca data
+name=$(basename $i .reads.maptaxa.txt)
+cp $i $name.tmp
+perl -i -p -e 's/\[SK\] //g' $name.tmp 
+perl -i -p -e 's/ \[P\] //g' $name.tmp 
+perl -i -p -e 's/ \[C\] //g' $name.tmp 
+perl -i -p -e 's/ \[O\] //g' $name.tmp 
+perl -i -p -e 's/ \[F\] //g' $name.tmp 
+perl -i -p -e 's/ \[G\] //g' $name.tmp 
+perl -i -p -e 's/ \[S\] //g' $name.tmp
+# get the abundance table of each level
+cut -f $col $name.tmp | cut -f $level -d ";"|sort | uniq -c | sort -rn > $o #$name.taxa.count.txt
+# change the format
+perl -p -i -e 's/^\s+(\d{1,}) /$1\t/g' $o #$name.taxa.count.txt
+perl -p -i -e 's/^(\d{1,})\t(.*)$/$2\t$1/g' $o
+perl -p -i -e 's/^\t(\d{1,})$/NO_rank\t$1/g' $o
+rm $name.tmp
+
 IFS_old=$IFS
 IFS=$'\n'
 if [ $flag = "y" ]
