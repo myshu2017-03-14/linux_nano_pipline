@@ -51,7 +51,7 @@ porechop拆分命令如下：
 - 注：可以根据生成的.len文件绘制reads长度分布bar图，代码如下
 
 > ./2-reads_length_plots/plot_bar_of_reads_length.sh porechop_output_85/ raw_reads_length_barplots/
- 
+
 在 raw_reads_length_barplots/目录下会生成拆分后每个样本的reads分布柱状图，相关的bar图间隔参数设置，详见./2-reads_length_plots/plot_bar_of_reads_length.sh脚本
 
 - 接着，运行blast，命令如下：
@@ -62,7 +62,9 @@ porechop拆分命令如下：
 
 运行完成之后会生成一个`blastn_out/`文件夹。
  
-- 最后，需要对blast的结果进行处理：
+- 接着，需要对blast的结果进行过滤处理：（分别采用identity和coverage 进行过滤，并使用megan软件的相关命令进行处理，最终得到每条reads的准确分类信息以及丰度信息
+
+  + blastn 结果过滤
 
 > ./count_taxa_abundance_blastn.sh blastn_out/
 >
