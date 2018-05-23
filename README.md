@@ -52,7 +52,7 @@ porechop拆分命令如下：
 
 > ./2-reads_length_plots/plot_bar_of_reads_length.sh porechop_output_85/ raw_reads_length_barplots/
 
-在 raw_reads_length_barplots/目录下会生成拆分后每个样本的reads分布柱状图，相关的bar图间隔参数设置，详见./2-reads_length_plots/plot_bar_of_reads_length.sh脚本
+在 `raw_reads_length_barplots/`目录下会生成拆分后每个样本的reads分布柱状图，相关的bar图间隔参数设置，详见`./2-reads_length_plots/plot_bar_of_reads_length.sh`脚本
 
 - 接着，运行blast，命令如下：
 
@@ -68,10 +68,9 @@ porechop拆分命令如下：
 
 > ./16S_and_ITS_data_analysis/filter_program/filter_blastn_myshu.sh blastn_out/ 70 30 blastn_out_filter_i70_c30
 
-  2. megan软件处理:（输入参数分别为blastn过滤结果；原始数据文件夹；结果文件夹；及Tag：-a for 16S,-b for ITS,-c for 16S+ITS；表示输入数据类型）
+  2. megan软件处理:（输入参数分别为blastn过滤结果；原始数据文件夹；结果文件夹；及`Tag：-a for 16S,-b for ITS,-c for 16S+ITS`；表示输入数据类型）
 
 >./16S_and_ITS_data_analysis/filter_program/lca_test.sh blastn_out_filter_i70_c30/ /analysis/20180428-FAH08967-12-samples/porechop_output_85/ blastn_out_lca/ -a
-
 
 - 对每个样本的每个分类层级数据进行统计，并合并多个样本
 
@@ -80,21 +79,28 @@ porechop拆分命令如下：
 >
 > 注，最后一位参数为tag，同上megan软件处理参数
 
-- 对blastn比对结果中的reads绘制reads长度分布图
-
-> ./2-reads_length_plots/plot_bar_of_reads_length_ITS_or_16S_for_lca.sh blastn_out/ data/ read_len_bar_of_16S_and_ITS/ -c
-> 注，最后一位参数为tag，同上megan软件处理参数
-
 - 绘制sankey plots
+
+> ./16S_and_ITS_data_analysis/plots_program/sankey_plots_pro/command.sh blastn_lca_out
+
+- 对blastn比对结果中的reads绘制reads长度分布图（可选）
+
+> ./2-reads_length_plots/plot_bar_of_reads_length_ITS_or_16S_for_lca.sh blastn_out/ /analysis/20180428-FAH08967-12-samples/porechop_output_85/ 16S_and_ITS_reads_length_barplots/ -c
+>
+> 注，最后一位参数为tag，同上megan软件处理参数;当选择-c时，也会单独绘制比对上16S数据库以及ITS数据库的reads长度分布bar图
 
 
 - 最后，将结果导出到结果文件夹：
 
-> ./get_final_results.sh blastn_out/ final_out/
+> ./16S_and_ITS_data_analysis/get_final_results.sh blastn_out/ blastn_lca_out/ 16S_and_ITS_reads_length_barplots/ raw_reads_length_bar_plots/ final_out/
 
- 
 - 最后`final_out/`文件夹会包含如下文件：
 
-> —— BC*_blastn_16S_anno_cov.out  # blastn结果（包含注释信息）
+> —— blastn_lca_out/  # blastn过滤后结果（包含过滤后每条reads的注释信息以及物种丰度表）
 >
-> —— cat_taxa_abundance.ITS.level*.out  # 物种丰度表
+> —— blastn_out/  # blastn结果（包含原始比对结果以及注释信息）
+>
+> —— reads_length_barplots/  # reads长度分布bar图，原始拆分reads长度分布信息以及比对到数据库的reads长度分布Bar图信息
+>
+> —— sankey_plots/   # sankey plots
+>
