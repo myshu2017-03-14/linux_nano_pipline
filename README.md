@@ -71,7 +71,7 @@ porechop拆分命令如下：
   2. megan软件处理:（输入参数分别为blastn过滤结果；原始数据文件夹；结果文件夹；及Tag：-a for 16S,-b for ITS,-c for 16S+ITS；表示输入数据类型）
 
 >./16S_and_ITS_data_analysis/filter_program/lca_test.sh blastn_out_filter_i70_c30/ /analysis/20180428-FAH08967-12-samples/porechop_output_85/ blastn_out_lca/ -a
- 
+
 - 对每个样本的每个分类层级数据进行统计，并合并多个样本
 
 > ./16S_and_ITS_data_analysis/count_taxa_abundance_blastn_lca.sh blastn_out_lca/
@@ -83,7 +83,7 @@ porechop拆分命令如下：
 > ./2-reads_length_plots/plot_bar_of_reads_length_ITS_or_16S_for_lca.sh blastn_out/ data/ read_len_bar_of_16S_and_ITS/ -c
 > 注，最后一位参数为tag，同上megan软件处理参数
 
-- 绘制sankey plots
+- 绘制sankey plots
 
 
 - 最后，将结果导出到结果文件夹：
