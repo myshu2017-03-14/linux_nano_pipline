@@ -79,9 +79,9 @@ porechop拆分命令如下：
 >
 > 注，最后一位参数为tag，同上megan软件处理参数
 
-- 绘制sankey plots
+- 绘制sankey plots（需要安装R networkD3包）
 
-> ./16S_and_ITS_data_analysis/plots_program/sankey_plots_pro/command.sh blastn_lca_out
+> ./16S_and_ITS_data_analysis/plots_program/sankey_plots_pro/command.sh blastn_lca_out/
 
 - 对blastn比对结果中的reads绘制reads长度分布图（可选）
 
