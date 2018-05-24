@@ -85,7 +85,7 @@ porechop拆分命令如下：
 
 - 对blastn比对结果中的reads绘制reads长度分布图（可选）
 
-> ./2-reads_length_plots/plot_bar_of_reads_length_ITS_or_16S_for_lca.sh blastn_out/ /analysis/20180428-FAH08967-12-samples/porechop_output_85/ 16S_and_ITS_reads_length_barplots/ -c
+> ./2-reads_length_plots/plot_bar_of_reads_length_ITS_or_16S_for_lca.sh blastn_lca_out/ porechop_output_85/ 16S_and_ITS_reads_length_barplots/ -c
 >
 > 注，最后一位参数为tag，同上megan软件处理参数;当选择-c时，也会单独绘制比对上16S数据库以及ITS数据库的reads长度分布bar图
 
