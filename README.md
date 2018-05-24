@@ -75,7 +75,7 @@ porechop拆分命令如下：
 - 对每个样本的每个分类层级数据进行统计，并合并多个样本
 
 > ./16S_and_ITS_data_analysis/count_taxa_abundance_blastn_lca.sh blastn_out_lca/
-> ./16S_and_ITS_data_analysis/cat_taxa_abundance_blastn_lca.sh blastn_lca_out -c
+> ./16S_and_ITS_data_analysis/cat_taxa_abundance_blastn_lca.sh blastn_lca_out/ -c
 >
 > 注，最后一位参数为tag，同上megan软件处理参数
 
