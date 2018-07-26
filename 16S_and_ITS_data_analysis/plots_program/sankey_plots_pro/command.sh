@@ -25,5 +25,8 @@ in=$1
 pro=$(dirname $0) 
 for i in $in/*.sumtaxa.txt
 do
+	if [ ! -s $i ];then
+		continue
+	fi
 	$pro/sankey_for_blast_lca_taxa.sh $i
 done

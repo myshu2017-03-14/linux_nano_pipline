@@ -32,7 +32,23 @@ for i in `ls $in/*_sankey_plot.html  | awk '{print $NF}'| awk -F '/' '{print $NF
 #$in/BC03.16S_sankey_plot.html
 do
 	echo $i
-	cp $in/$i.16S_sankey_plot.html $in/$i.ITS_sankey_plot.html $out/.raw_plots
+	if [ ! -s $in/$i.16S_sankey_plot.html ];then
+		if [ ! -s $in/$i.ITS_sankey_plot.html ] ; then
+			continue
+		else
+			# cp ITS 
+			cp $in/$i.ITS_sankey_plot.html $out/.raw_plots
+		fi
+	else
+		if [ ! -s $in/$i.ITS_sankey_plot.html ] ; then
+			# cp 16S
+			cp $in/$i.16S_sankey_plot.html $out/.raw_plots
+		else
+			# cp 16S ITS
+			cp $in/$i.16S_sankey_plot.html $in/$i.ITS_sankey_plot.html $out/.raw_plots
+		fi
+	fi
+#	cp $in/$i.16S_sankey_plot.html $in/$i.ITS_sankey_plot.html $out/.raw_plots
 	export x=$i
 	perl -p -e 's/BC01/$ENV{"x"}/g' $pro/templete.html > $out/$i.html
 done
