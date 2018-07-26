@@ -25,7 +25,11 @@ out=$2
 if [ ! -d "$out" ]; then
   mkdir $out
 fi
-mkdir $out/.raw_plots
+if [ ! -d "$out/.raw_plots" ]; then
+   mkdir $out/.raw_plots
+else
+  rm $out/.raw_plots/*
+fi
 pro=$(dirname $0)
 #ls $in/*_sankey_plot.html  | awk '{print $NF}'| awk -F '/' '{print $NF}'| cut -f 1 -d "." | sort | uniq > $pro/t
 for i in `ls $in/*_sankey_plot.html  | awk '{print $NF}'| awk -F '/' '{print $NF}'| cut -f 1 -d "." | sort | uniq`
